@@ -11,6 +11,10 @@ def index(request):
     return response
 
 
+def final(request):
+    response = render(request, 'main/access_admin.html')
+    return response
+
 def shop(request):
     secret = request.COOKIES.get('admin')
     if secret is None:
@@ -18,8 +22,13 @@ def shop(request):
     else:
         sha256_obj = hashlib.sha256(b'true').hexdigest()
         md5_obj = hashlib.md5(b'true').hexdigest()
+        print(sha256_obj)
+        print(md5_obj)
         if secret == sha256_obj:
             return HttpResponse('Ты на верном пути, попробуй другую кодировку')
         if secret == md5_obj:
-            return redirect('/access_admin')
+            return redirect('/C0N6RATULAT10N5')
         return HttpResponse('Думай лучше!')
+
+def access_admin(request):
+    return HttpResponse('Поздравляю, отличная работа! http://localhost:8000/4dm1n_4cc355')
