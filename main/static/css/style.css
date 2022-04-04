@@ -31,7 +31,10 @@ Theme URI:
 
 -------------------------------------------------------------------*/
 
-html{background: #8ab407;}
+html{
+	background: #8ab407;
+	overflow: hidden;
+}
 /* html{background: #1c2401;} */
 /*------------------------------------------------------------------
         1. Body
@@ -239,7 +242,7 @@ body{margin: 0;}
 	color: #f6f6f6;
 	position: absolute;
 	text-align: center;
-	margin: 0 0 0 -290px;
+	margin: 0 0 -30px -290px;
 	font: 300 16px/20px 'Poppins', sans-serif;
 }
 .txt p{
@@ -289,7 +292,7 @@ body{margin: 0;}
 	#oh{left: 31.2%;}
 	.txt{
 		bottom: 127px;
-		margin: 0 0 0 -230px;
+		margin: 0 0 -60px -230px;
 	}
 	.txt p{margin: 0 0 23px;}
 	#title{top: 76%;}
