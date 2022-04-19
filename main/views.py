@@ -4,7 +4,7 @@ import hashlib
 import random
 
 hexMass = ['sha256', 'md5', 'sha224', 'sha384', 'sha512']
-
+# 192.168.23.52
 def index(request):
     response = render(request, 'main/index.html')
     if request.COOKIES.get('admin') is None:
