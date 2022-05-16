@@ -48,28 +48,26 @@ def final(request):
 
 def shop(request):
     secret = request.COOKIES.get('admin')
-    firstCodeRight = request.COOKIES.get('yid')
-    print(firstCodeRight)
+    oneCodeRight = request.COOKIES.get('yid')
     firstCoding_obj = eval("hashlib." + hexMass[int(request.COOKIES.get('_help_yandex_1'))] + "(b'true').hexdigest()")
     secondCoding_obj = eval("hashlib." + hexMass[int(request.COOKIES.get('_help_yandex_2'))] + "(b'true').hexdigest()")
-    print('hg')
     if secret is None:
         return HttpResponse('')
     else:
-        if firstCodeRight.lower() == 'true':
+        if oneCodeRight.lower() == 'true':
             if secret == secondCoding_obj:
                 return redirect('/C0N6RATULAT10N5')
             else:
-                return HttpResponse('Ты отгадал одну из кодировок, попробуй еще одну другую кодировку')
+                return HttpResponse('Ты отгадал одну из кодировок, теперь попробуй угадать вторую! ;) P.S. Этой кодировкой может быть любая другая, кроме этой!')
         else:
             if secret == firstCoding_obj:
-                response = HttpResponse('Ты отгадал одну из кодировок, попробуй еще одну другую кодировку')
+                response = HttpResponse('Ты отгадал одну из кодировок, теперь попробуй угадать вторую! ;) P.S. Этой кодировкой может быть любая другая, кроме этой!')
                 response.set_cookie('yid', 'true')
                 return response
             elif secret in answers:
-                return HttpResponse('Ты на верном пути, попробуй другую кодировку')
-        return HttpResponse('Думай лучше!')
+                return HttpResponse('Отлично! Ты верном пути! Теперь попробуй другую кодировку!')
+        return HttpResponse('Привет! Я понимаю только закодированные сообщения, а точнее всего 1 слово на нескольких языках. Попробуй понять о каком слове идет речь и возвращайся снова!')
 
 
 def access_admin(request):
-    return HttpResponse('Поздравляю, отличная работа! http://localhost:8000/4dm1n_4cc355')
+    return HttpResponse('Поздравляю, отличная работа! Твоя награда здесь -> http://айпи сервера/4dm1n_4cc355')
